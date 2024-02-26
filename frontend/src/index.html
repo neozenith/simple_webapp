@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>  
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+
+    <link href="./output.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <h1>Fuel Receipt Tracker</h1>
+
+    <form action="/target" class="dropzone" id="my-great-dropzone"></form>
+
+    <script>
+    // https://github.com/dropzone/dropzone/blob/main/src/options.js
+    Dropzone.options.myGreatDropzone = { // camelized version of the `id`
+        paramName: "file", // The name that will be used to transfer the file
+        maxFilesize: 2, // MB
+        accept: function(file, done) {
+        if (file.name == "justinbieber.jpg") {
+            done("Naha, you don't.");
+        }
+        else { done(); }
+        }
+    };
+    </script>
+</body>
+</html>
+
